@@ -5,7 +5,7 @@ float velocidade = 2.0f;
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0.5f, 0.0f, 0.5f); //Roxo
+    glColor3f(0.5f, 0.0f, 0.5f); //roxo
 
     glBegin(GL_QUADS);
     glVertex2f(-10 + x_position, 10);
@@ -19,7 +19,7 @@ void display() {
 
 void update(int value) {
     x_position += velocidade;
-    //Se atingir a borda, inverte a direção
+    //se atingir a borda, inverte a direção
     if (x_position > 90 || x_position < -90) {
         velocidade = -velocidade;
     }
