@@ -24,28 +24,31 @@ void drawRing(float innerRadius, float outerRadius, float r, float g, float b) {
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
-    drawRing(0.6f, 0.8f, 0.0f, 0.0f, 0.2f); //azul escuro 
-    drawRing(0.4f, 0.6f, 0.0f, 0.0f, 0.6f); //azul claro 
-    drawRing(0.2f, 0.4f, 0.0f, 0.0f, 0.2f); //azul escuro 
-    drawRing(0.0f, 0.2f, 1.0f, 1.0f, 1.0f); //branco 
+    drawRing(60.0f, 80.0f, 0.0f, 0.0f, 0.2f); //azul escuro
+    drawRing(40.0f, 60.0f, 0.0f, 0.0f, 0.6f); //azul claro
+    drawRing(20.0f, 40.0f, 0.0f, 0.0f, 0.2f); //azul escuro
+    drawRing(0.0f, 20.0f, 1.0f, 1.0f, 1.0f);  //branco
 
     glFlush();
 }
 
 void init() {
-    glClearColor(1.0, 1.0, 1.0, 1.0); //fundo branco
+    glClearColor(1.0, 1.0, 1.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(-1.0, 1.0, -1.0, 1.0);
+    gluOrtho2D(-100.0, 100.0, -100.0, 100.0);
 }
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutCreateWindow("Círculo Colorido");
-    glutInitWindowSize(640, 640);
-    glutDisplayFunc(display);
-    init();
-    glutMainLoop();
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
+    glutInitWindowSize(640, 640);              
+    glutInitWindowPosition(100, 100);            
+    glutCreateWindow("Círculo Colorido");         
+
+    init();                
+    glutDisplayFunc(display); 
+    glutMainLoop();           
     return 0;
 }
 
