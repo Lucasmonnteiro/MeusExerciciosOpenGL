@@ -1,7 +1,7 @@
 #include <GL/glut.h>
 
 void init() {
-    glClearColor(1.0f, 0.9569f, 0.8157f, 1.0f);
+    glClearColor(1.0f, 0.9569f, 0.8157f, 1.0f); //cor do fundo
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0.0, 400.0, 0.0, 400.0); 
